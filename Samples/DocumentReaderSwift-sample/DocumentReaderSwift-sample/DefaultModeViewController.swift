@@ -123,6 +123,9 @@ class DefaultModeViewController: UIViewController {
     
     func handleResult(result: DocumentReaderResults?) {
         guard let result = result else { return }
+        print(result.rfidSessionData?.sessionDataStatus.overallStatus.rawValue)
+        print(result.overallResult.rawValue)
+        print(CheckResult.ok.rawValue)
         print("Result class: \(result)")
         // use fast getValue method
         let name = result.getTextFieldValueByType(fieldType: .ft_Surname_And_Given_Names)
